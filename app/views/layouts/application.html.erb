@@ -11,13 +11,15 @@
   </head>
   <body>
     <div id="sidebar">
-    <ul>
-      <li class="category"> <%=link_to "Tomblr", root_path %></li>
-      <li><%= link_to 'Posts', root_path %> </li>
-      <li><%= link_to 'About', about_path %></li>
-      <li></li>
+      <ul>
+        <li class="category"> <%=link_to "Tomblr", root_path %></li>
+        <li><%= link_to 'Posts', root_path %> </li>
+        <li><%= link_to 'About', about_path %></li>
+   
     </ul>
-    <p class="sign_in"><%= link_to 'User Login', new_user_session_path %> </p>
+    <% if !user_signed_in? %>
+      <p class="sign_in"><%= link_to 'User Login', new_user_session_path %> </p>
+    <% end %>
   </div>
 
    <div id="main_content">
